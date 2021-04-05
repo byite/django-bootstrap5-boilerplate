@@ -3,16 +3,16 @@
 ## Setup
 ### Installing dependancies
 - Pyhton
-Click the link [HERE]() to follow the steps to set up your python virtual environment for development.
+	Click the link [HERE]() to follow the steps to set up your python virtual environment for development.
 
-Once your virtual environment is configured and running, install python dependancies using the following command:
-```pip install -r requirements.txt```
+	Once your virtual environment is configured and running, install python dependancies using the following command:
+	```pip install -r requirements.txt```
 
 - Node
-Ensure node and NPM are installed on your system or follow the steps [HERE]()
+    Ensure node and NPM are installed on your system or follow the steps [HERE]()
 
-Install all Node dependancies by running the following command:
-```npm install```
+    Install all Node dependancies by running the following command:
+    ```npm install```
 
 ### Required environment variables
 To run this project, a number of environment variables are required. These can be set using your teminal or in your development environments activate script.
