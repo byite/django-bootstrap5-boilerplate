@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+	'accounts',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 	'crispy_forms',
+	'core'
 ]
 '''
 # Provider specific settings
@@ -74,8 +76,7 @@ ROOT_URLCONF = 'django_project.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['core/templates'],
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',   
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

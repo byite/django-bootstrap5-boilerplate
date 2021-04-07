@@ -26,12 +26,14 @@
 
 		{% if messages %}
 		<div class="alert alert-warning alert-dismissible fade show" role="alert">
-			<ul>
-				{% for message in messages %}
-				<li>{{message}}</li>
-				{% endfor %}
-			</ul>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<div class="p-3">
+				<ul>
+					{% for message in messages %}
+					<li>{{message}}</li>
+					{% endfor %}
+				</ul>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
 		</div>
 		{% endif %}
 
@@ -40,8 +42,8 @@
 				<div class="m-3 m-lg-5 text-end text-uppercase">
 					<ul class="list-inline">
 						{% if user.is_authenticated %}
-							<li class="list-inline-item"><a href="{% url 'account_email' %}"><strong>Change E-mail</strong></a></li>
-							<li class="list-inline-item"><a href="{% url 'account_logout' %}"><strong>Sign Out</strong></a></li>
+							<li class="list-inline-item{% if not '/accounts/email/' in request.path %}"><a href="{% url 'account_email' %}" class="text-muted"><strong>Change E-mail</strong></a>{% else %} text-primary"><strong>Change E-mail</strong>{% endif %}</li>
+							<li class="list-inline-item{% if not '/accounts/logout/' in request.path %}"><a href="{% url 'account_logout' %}" class="text-muted"><strong>Sign Out</strong></a>{% else %} text-primary"><strong>Sign Out</strong>{% endif %}</li>
 						{% else %}
 							<li class="list-inline-item{% if not '/accounts/signup/' in request.path %}"><a href="{% url 'account_signup' %}" class="text-muted"><strong>Sign Up</strong></a>{% else %} text-primary"><strong>Sign Up</strong>{% endif %}</li>
 							<li class="list-inline-item{% if not '/accounts/login/' in request.path %}"><a href="{% url 'account_login' %}" class="text-muted"><strong>Sign In</strong></a>{% else %} text-primary"><strong>Sign In</strong>{% endif %}</li>
