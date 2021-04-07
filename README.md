@@ -2,13 +2,13 @@
 
 ## Setup
 ### Installing dependancies
-- Pyhton
+- __Pyhton:__ 
 	Click the link [HERE]() to follow the steps to set up your python virtual environment for development.
 
 	Once your virtual environment is configured and running, install python dependancies using the following command:
 	```pip install -r requirements.txt```
 
-- Node
+- __Node:__ 
     Ensure node and NPM are installed on your system or follow the steps [HERE]()
 
     Install all Node dependancies by running the following command:

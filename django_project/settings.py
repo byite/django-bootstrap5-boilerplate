@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
+    'allauth.socialaccount',
+	'crispy_forms',
 ]
 '''
 # Provider specific settings
@@ -152,6 +153,16 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Crispy forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'bootstrap4', 'crispy-bootstrap5', )
+CRISPY_TEMPLATE_PACK = 'crispy-bootstrap5'
+CRISPY_CLASS_CONVERTERS = {
+	'textinput': 'form-control textinput',
+	'passwordinput': 'form-control passwordinput',
+	'radioinput': 'form-control',
+}
 
 
 # Static files (CSS, JavaScript, Images)
