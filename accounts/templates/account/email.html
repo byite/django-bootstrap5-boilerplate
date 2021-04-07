@@ -28,17 +28,17 @@
 					</div>
 				{% endif %}
 				
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="{{ field.id_for_label }}" placeholder="New E-mail" aria-label="New Email" name="{{ form.email.html_name }}" {% if form.email.value %}value="{{ form.email.value }}"{% endif %}>
-					<button class="btn btn-outline-secondary py-2 px-4" name="action_add" type="submit"><i data-feather="plus"></i> Add</button>
-				</div>
-				{% if form.email.errors %}
-					<div class="alert alert-danger">
-						<div class="m-3">
-							{{ form.email.errors }}
-						</div>
+				<div class="mb-3">
+					<div class="input-group has-validation">
+						<input type="email" class="form-control{% if form.email.errors %} is-invalid{% endif %}" id="{{ form.email.id_for_label }}" placeholder="New E-mail" name="{{ form.email.html_name }}" {% if form.email.value %}value="{{ form.email.value }}"{% endif %} aria-label="New Email" aria-describedby="{{ form.email.id_for_label }}Feedback" required>
+						<button class="btn btn-outline-secondary py-2 px-4" name="action_add" type="submit"><i data-feather="plus"></i> Add</button>
+						{% if form.email.errors %}
+							<div id="{{ form.email.id_for_label }}Feedback" class="invalid-feedback">
+								{{ form.email.errors }}
+							</div>
+						{% endif %}
 					</div>
-				{% endif %}
+				</div>
 			</form>
 		</div>
 	{% endif %}
